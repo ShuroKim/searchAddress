@@ -32,7 +32,7 @@
                  var data = JSON.parse(json);
                  var action = data.action;
                  var params = data.params;
-                   console.log("onReceivedActivityMessageViaJavascriptInterface "+event);
+                console.log("onReceivedActivityMessageViaJavascriptInterface "+event);
             }
 
 
@@ -86,8 +86,8 @@
                         if(fullRoadAddr !== ''){
                             fullRoadAddr += extraRoadAddr;
                         }
-						            var postData = {
-                          address: data.fullRoadAddr
+			var postData = {
+                          address: data.fullRoadAddr,
                         };
                         window.webkit.messageHandlers.ios.postMessage(postData);
                     },
