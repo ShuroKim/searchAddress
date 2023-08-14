@@ -14,7 +14,7 @@
       id="layer"
       style="display:block; position:absolute; overflow:hidden; z-index:1; -webkit-overflow-scrolling:touch; "
     ></div>
-     <script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+    <script src="https://spi.maps.daum.net/imap/map_js_init/postcode.v2.js"></script>
     <script>
  window.addEventListener("message", onReceivedPostMessage, false);
 
@@ -86,9 +86,10 @@
                         if(fullRoadAddr !== ''){
                             fullRoadAddr += extraRoadAddr;
                         }
-
-                      window.webkit.messageHandlers.ios.postMessage(postData);
-                        window.Android.processDATA(fullRoadAddr); // data.zonecode + ", " +
+						            var postData = {
+                          address: data.fullRoadAddr
+                        };
+                        window.webkit.messageHandlers.ios.postMessage(postData);
                     },
                     theme: {
                        bgColor: "#FFFFFF", //바탕 배경색
